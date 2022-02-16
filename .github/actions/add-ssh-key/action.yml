@@ -1,0 +1,15 @@
+name: 'Add a custom ssh key'
+
+inputs:
+  random:
+    description: 'none'
+    required: true
+    default: 'random'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Add SSH Key to the agent
+      run: ssh-add -l
+      shell: bash
+

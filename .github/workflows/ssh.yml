@@ -1,0 +1,18 @@
+name: Test some stuff here
+on:
+  push:
+
+jobs:
+  checkout_a_private_repo:
+    name: Try checking out a private repo of mine
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: webfactory/ssh-agent@v0.5.4
+      with:
+        ssh-private-key: '${{ secrets.MY_ED_SSH }}'
+    - uses: actions/checkout@v2
+    - uses: ./.github/actions/add-ssh-key
+    - uses: actions/checkout@v2
+      with:
+        repository: betasve/mstd
