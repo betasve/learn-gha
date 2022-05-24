@@ -1,0 +1,11 @@
+name: On repository Dispatch
+on:
+  repository_dispatch:
+    types: [codeowners-check]
+
+jobs:
+  handle-dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print something
+        run: echo ${{ github.event.client_payload }}
