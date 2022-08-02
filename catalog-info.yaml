@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dev-x-internal-tools
+  title: DevX Internal Tools
+  description: Repo for storing DevX internal tooling, scripts and conf files
+  labels:
+    example.com/custom: custom_label_value
+  annotations:
+    example.com/service-discovery: artistweb
+    circleci.com/project-slug: github/example-org/artist-website
+  tags:
+    - ruby
+  links:
+    - url: https://team.toptal.net/teams/305/structure
+      title: DevX Team Page at Toptal
+      icon: dashboard
+      type: admin-dashboard
+spec:
+  type: library
+  lifecycle: experimental
+  owner: dev-x-team
+  system: toptal-internal
